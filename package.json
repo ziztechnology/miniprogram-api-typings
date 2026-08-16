@@ -1,0 +1,25 @@
+{
+  "name": "miniprogram-api-typings",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ziztechnology/miniprogram-api-typings"
+  },
+  "type": "module",
+  "types": "./src/index.d.ts",
+  "exports": {
+    "types": "./src/index.d.ts"
+  },
+  "scripts": {
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.63.0",
+    "typescript": "^7.0.2"
+  }
+}
