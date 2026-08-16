@@ -1,4 +1,11 @@
-export type NetworkType = 'wifi' | '2g' | '3g' | '4g' | '5g' | 'unknown' | 'none';
+export type NetworkType =
+  | 'wifi'
+  | '2g'
+  | '3g'
+  | '4g'
+  | '5g'
+  | 'unknown'
+  | 'none';
 
 export interface OnNetworkWeakChangeRes {
   weakNet: boolean;
