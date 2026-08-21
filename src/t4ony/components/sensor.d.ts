@@ -78,56 +78,56 @@ export interface BatteryStateSample {
   voltageMv: number | null;
 }
 
-export interface TimedDrivingVector {
-  /** 传感器的三维向量采样值。 */
-  value: SensorVector3;
-  /** 采样时相对于系统启动的毫秒时间戳。 */
-  sampledAtElapsedRealtimeMs: number;
-}
+// export interface TimedDrivingVector {
+//   /** 传感器的三维向量采样值。 */
+//   value: SensorVector3;
+//   /** 采样时相对于系统启动的毫秒时间戳。 */
+//   sampledAtElapsedRealtimeMs: number;
+// }
 
-export type GravityPairingMode = 'interpolated' | 'nearest';
+// export type GravityPairingMode = 'interpolated' | 'nearest';
 
-export interface DrivingMotionFrame {
-  /** 驾驶运动帧的递增序号。 */
-  sequence: number;
-  /** 帧生成时相对于系统启动的毫秒时间戳。 */
-  capturedAtElapsedRealtimeMs: number;
-  /** 与当前帧配对的加速度计采样。 */
-  accelerometer: TimedDrivingVector;
-  /** 与当前帧配对的重力传感器采样。 */
-  gravity: TimedDrivingVector;
-  /** 与当前帧配对的陀螺仪采样。 */
-  gyroscope: TimedDrivingVector;
-  /** 加速度计与重力采样之间的时间偏差，单位为毫秒。 */
-  accelerometerGravitySkewMs: number;
-  /** 加速度计与陀螺仪采样之间的时间偏差，单位为毫秒。 */
-  accelerometerGyroscopeSkewMs: number;
-  /** 传感器采样允许配对的最大时间偏差，单位为毫秒。 */
-  pairingLimitMs: number;
-  /** 重力采样与加速度计采样的配对方式。 */
-  gravityPairingMode: GravityPairingMode;
-  /** 从加速度中移除重力分量后得到的线性加速度。 */
-  derivedLinearAcceleration: SensorVector3;
-}
+// export interface DrivingMotionFrame {
+//   /** 驾驶运动帧的递增序号。 */
+//   sequence: number;
+//   /** 帧生成时相对于系统启动的毫秒时间戳。 */
+//   capturedAtElapsedRealtimeMs: number;
+//   /** 与当前帧配对的加速度计采样。 */
+//   accelerometer: TimedDrivingVector;
+//   /** 与当前帧配对的重力传感器采样。 */
+//   gravity: TimedDrivingVector;
+//   /** 与当前帧配对的陀螺仪采样。 */
+//   gyroscope: TimedDrivingVector;
+//   /** 加速度计与重力采样之间的时间偏差，单位为毫秒。 */
+//   accelerometerGravitySkewMs: number;
+//   /** 加速度计与陀螺仪采样之间的时间偏差，单位为毫秒。 */
+//   accelerometerGyroscopeSkewMs: number;
+//   /** 传感器采样允许配对的最大时间偏差，单位为毫秒。 */
+//   pairingLimitMs: number;
+//   /** 重力采样与加速度计采样的配对方式。 */
+//   gravityPairingMode: GravityPairingMode;
+//   /** 从加速度中移除重力分量后得到的线性加速度。 */
+//   derivedLinearAcceleration: SensorVector3;
+// }
 
-export interface DrivingSensorContext {
-  /** 生成驾驶传感器数据的处理管线版本。 */
-  pipelineVersion: string;
-  /** 生成数据时的 Runtime 数值版本代码。 */
-  runtimeVersionCode: number;
-  /** 操作系统构建指纹的哈希值。 */
-  osBuildFingerprintHash: string;
-  /** 当前物理传感器集合的标识符。 */
-  sensorSetId: string;
-  /** 当前传感器采集上下文的标识符。 */
-  sensorContextId: string;
-  /** 当前应用安装实例的标识符。 */
-  appInstanceId: string;
-  /** 安装姿态下的重力单位向量；不可用时为 `null`。 */
-  mountingGravityUnitVector: SensorVector3 | null;
-  /** 传感器温度，单位为摄氏度；不可用时为 `null`。 */
-  sensorTemperatureCelsius: number | null;
-}
+// export interface DrivingSensorContext {
+//   /** 生成驾驶传感器数据的处理管线版本。 */
+//   pipelineVersion: string;
+//   /** 生成数据时的 Runtime 数值版本代码。 */
+//   runtimeVersionCode: number;
+//   /** 操作系统构建指纹的哈希值。 */
+//   osBuildFingerprintHash: string;
+//   /** 当前物理传感器集合的标识符。 */
+//   sensorSetId: string;
+//   /** 当前传感器采集上下文的标识符。 */
+//   sensorContextId: string;
+//   /** 当前应用安装实例的标识符。 */
+//   appInstanceId: string;
+//   /** 安装姿态下的重力单位向量；不可用时为 `null`。 */
+//   mountingGravityUnitVector: SensorVector3 | null;
+//   /** 传感器温度，单位为摄氏度；不可用时为 `null`。 */
+//   sensorTemperatureCelsius: number | null;
+// }
 
 export interface SensorSnapshot {
   /** 快照生成时的 Unix 时间戳，单位为毫秒。 */
@@ -157,17 +157,17 @@ export interface SensorSnapshot {
   /** 运动强度指标。 */
   motionIntensity: SensorMetric<number>;
   /** 与快照关联的驾驶运动帧；不可用时为 `null`。 */
-  drivingMotionFrame: DrivingMotionFrame | null;
+  // drivingMotionFrame: DrivingMotionFrame | null;
   /** 生成驾驶传感器数据时使用的上下文。 */
-  drivingSensorContext: DrivingSensorContext;
+  // drivingSensorContext: DrivingSensorContext;
 }
 
-export interface DrivingSensorEvent {
-  /** 本次事件携带的驾驶运动帧。 */
-  frame: DrivingMotionFrame;
-  /** 生成本次事件时使用的驾驶传感器上下文。 */
-  context: DrivingSensorContext;
-}
+// export interface DrivingSensorEvent {
+//   /** 本次事件携带的驾驶运动帧。 */
+//   frame: DrivingMotionFrame;
+//   /** 生成本次事件时使用的驾驶传感器上下文。 */
+//   context: DrivingSensorContext;
+// }
 
 export interface StartAccelerometerOptions {
   /** 加速度计的采样速率档位。 */
@@ -183,10 +183,10 @@ export interface StartGyroscopeOptions {
   listener: T4onyListener<GyroscopeSample>;
 }
 
-export interface StartDrivingSensorOptions {
-  /** 接收驾驶传感器事件的监听器。 */
-  listener: T4onyListener<DrivingSensorEvent>;
-}
+// export interface StartDrivingSensorOptions {
+//   /** 接收驾驶传感器事件的监听器。 */
+//   listener: T4onyListener<DrivingSensorEvent>;
+// }
 
 export interface T4onySensorEntries {
   /** 启动加速度计采样并返回可停止的订阅。 */
@@ -200,7 +200,7 @@ export interface T4onySensorEntries {
   /** 获取当前可用传感器指标的快照。 */
   getSensorSnapshot: () => Promise<SensorSnapshot>;
   /** 启动驾驶传感器数据采集并返回可停止的订阅。 */
-  startDrivingSensor: (
-    options: StartDrivingSensorOptions,
-  ) => Promise<T4onySubscription>;
+  // startDrivingSensor: (
+  //   options: StartDrivingSensorOptions,
+  // ) => Promise<T4onySubscription>;
 }
