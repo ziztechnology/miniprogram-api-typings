@@ -11,8 +11,6 @@ export interface WindowInfo {
   windowHeight: number;
   /** 当前窗口顶部相对于屏幕顶部的偏移量，单位为 CSS 像素。 */
   screenTop: number;
-  /** 状态栏高度，单位为 CSS 像素。 */
-  statusBarHeight: number;
 }
 
 export interface T4onyBaseEntries {

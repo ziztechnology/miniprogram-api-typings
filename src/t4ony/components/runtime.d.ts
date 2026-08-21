@@ -32,7 +32,8 @@ export interface RuntimeInfo {
 
 export interface T4onyRuntimeEntries {
   /** 检查 API 协议是否存在，不代表页面已获授权或设备能力当前可用。 */
-  canIUse: (schema: string) => Promise<boolean>;
+  /** 暂时不开启这个 API */
+  // canIUse: (schema: string) => Promise<boolean>;
   /** 获取当前 Runtime 的版本、平台和能力信息。 */
   getRuntimeInfo: () => Promise<RuntimeInfo>;
 }

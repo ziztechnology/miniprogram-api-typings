@@ -20,7 +20,7 @@ export interface DeviceInfo {
   /** 设备存储空间总量，单位为字节。 */
   totalStorageBytes: number;
   /** 设备序列号，仅在页面声明并获授相应能力后返回。 */
-  serialNumber?: string;
+  // serialNumber?: string;
 }
 
 export interface BatteryInfo {
