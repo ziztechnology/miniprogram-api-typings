@@ -24,8 +24,6 @@ export interface RuntimeInfo {
   platform: 'android';
   /** Runtime 当前使用的运行配置。 */
   profile: 'packaged-h5';
-  /** 当前显示状态的修订版本号。 */
-  displayRevision: number;
   /** 以能力名称为键的 Runtime 能力状态集合。 */
   capabilities: Readonly<Record<string, RuntimeCapability>>;
 }
