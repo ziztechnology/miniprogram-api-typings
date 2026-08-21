@@ -123,8 +123,6 @@ export interface DrivingSensorContext {
   sensorContextId: string;
   /** 当前应用安装实例的标识符。 */
   appInstanceId: string;
-  /** 当前应用安装的修订版本号。 */
-  installationRevision: number;
   /** 安装姿态下的重力单位向量；不可用时为 `null`。 */
   mountingGravityUnitVector: SensorVector3 | null;
   /** 传感器温度，单位为摄氏度；不可用时为 `null`。 */

@@ -11,8 +11,6 @@ export type T4onyHeadHideReason =
 export interface T4onyHeadShowEvent {
   /** 页面头部变为可见的原因。 */
   reason: T4onyHeadShowReason;
-  /** 事件发生时的显示修订版本号。 */
-  displayRevision: number;
   /** 事件发生时相对于系统启动的毫秒时间戳。 */
   occurredAtElapsedRealtimeMs: number;
 }
@@ -20,8 +18,6 @@ export interface T4onyHeadShowEvent {
 export interface T4onyHeadHideEvent {
   /** 页面头部变为不可见的原因。 */
   reason: T4onyHeadHideReason;
-  /** 事件发生时的显示修订版本号。 */
-  displayRevision: number;
   /** 事件发生时相对于系统启动的毫秒时间戳。 */
   occurredAtElapsedRealtimeMs: number;
 }
